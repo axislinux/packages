@@ -1,0 +1,31 @@
+# Maintainer: XXCoreRangerX <mail@xxcore.pl>
+
+pkgname=base
+pkgver=3
+pkgrel=2
+pkgdesc='Minimal package set to define a basic Axis Linux installation'
+url='https://xxcore.pl'
+arch=('any')
+license=('GPL')
+PACKAGER="XXCoreRangerX <mail@xxcore.pl>"
+conflicts=('base')
+depends=(
+  # very very base
+  'filesystem' 'gcc-libs' 'glibc' 'bash'
+
+  # POSIX tools
+  'coreutils' 'file' 'findutils' 'gawk' 'grep' 'procps-ng' 'sed' 'tar'
+
+  # standard linux toolset
+  'gettext' 'pciutils' 'psmisc' 'shadow' 'util-linux' 'bzip2' 'gzip' 'xz'
+
+  # distro defined requirements
+  'licenses' 'pacman' 'systemd' 'systemd-sysvcompat'
+
+  # networking, ping, etc
+  'iputils' 'iproute2'
+
+  # Axis Linux keyring
+  'axislinux-keyring'
+)
+optdepends=('linux: bare metal support')

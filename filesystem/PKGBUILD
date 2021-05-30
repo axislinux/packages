@@ -1,0 +1,132 @@
+# Maintainer: XXCoreRangerX <mail@xxcore.pl>
+
+pkgname=filesystem
+pkgver=2021.05.30
+pkgrel=1
+pkgdesc='Base Axis Linux files'
+arch=('any')
+license=('GPL')
+PACKAGER="XXCoreRangerX <mail@xxcore.pl>"
+url='https://xxcore.pl'
+conflicts=('filesystem')
+depends=('iana-etc')
+backup=('etc/crypttab' 'etc/fstab' 'etc/group' 'etc/gshadow' 'etc/host.conf'
+        'etc/hosts' 'etc/issue' 'etc/ld.so.conf' 'etc/motd' 'etc/nsswitch.conf'
+        'etc/passwd' 'etc/profile' 'etc/resolv.conf' 'etc/securetty'
+        'etc/shadow' 'etc/shells')
+source=('crypttab' 'env-generator' 'fstab' 'group' 'gshadow' 'host.conf' 'hosts'
+        'issue' 'ld.so.conf' 'locale.sh' 'motd' 'nsswitch.conf' 'os-release'
+        'passwd' 'profile' 'resolv.conf' 'securetty' 'shadow' 'shells'
+        'sysctl' 'sysusers' 'tmpfiles' 'axislinux.svg' 'axislinux.png')
+sha512sums=('5f268b557257a201c256663b35f510d7fede0093e44645f18dc2a447ece2112d28bd7a60816331b37b72931583eff50d9dc616b9f9e9ff6d8f982db8d5b0c008'
+            '1731c4a41523e2823811fe030d8d2e86e69a0108fab244ed672e94d733e9b3c9ba282772c855d178dda38d10f431b193ad05b1a0a27c4aabff71792a5d557c09'
+            'b2ddf3db123f757e68a84926223b56a227c6e4fa99f1d06972246625b62f2a1b147f934e1bb4534d326127f8441a39afa6856f6ea2c7ecf6be53391bf0083370'
+            '0ade9187a5437076ec7d0f786528b0c4212e4f0c67edb87d8fd71815b144ab2876adeca7d943899d440e26d09ff7f4b3862733dc12decab202048cf640dfd5a8'
+            '2d93356e221aba569c47adf6c882d56fd53ae102e4bb17909a35dab505625860a66efe4dcdd0a33f5e85a6d3eabb4b7f9b9e027f1f157a991242d03ab7cbc85e'
+            'bc1e8c9be2d4c05992aa640a0862ed6d3822afc0d083d9779268a9a888edcd4527ae49c899f8aaa1878b7650187c9a484d488b159ae58a289a543c4a8cdccbca'
+            '629ff56e5f4fd87de570fe5bc9af703efb9725743811541f21b6ada3c4a6e613c3a010029d7d73f4b706e33b3098337659a1ec5e556d11d952335f350ba108a8'
+            '7decca13f891a88dc8a1e8c6b4fe8f11a7b5933df62c80589d0872e7bc7aa6fae727352387992dfdda6abec36f9e6dfad101305e4243d5949300df0430ef2a91'
+            '61cc6de0bdc2feab9f8103e8b47b62fd0493e902797b50d3f813ed405058d4d2682c41c120e3fa0e2a8cf7800929054414d1e06b59fcb280585369895392c4e5'
+            'e48b5f08563117b5fe80d4387a60dd874f3554bcc9e6307671bfc0b081aff398d1bbdc902f4a5cb04069d2f0ce5992758cb756dba33fe582124275295253fc03'
+            'cf83e1357eefb8bdf1542850d66d8007d620e4050b5715dc83f4a921d36ce9ce47d0d13c5d85f2b0ff8318d2877eec2f63b931bd47417a81a538327af927da3e'
+            '0361b59bce6b9947dea9aede78af3d15b959165976092c74bc56651a19b28349ef862ef2581629e251318bb3e32b16c428d2157664c4c2d5309391abbfaaad68'
+            'ff78ab6c5fe5fb293b2652aace49c4724a21d2db76c599b71983842ddb098b92e999d6de39fb4b9918ea1ed553fb6c7a8fec0c4234656c678727cc7a31745a23'
+            'df24002d74d2d543be0f8b74b36def1eba7054efd8da1943b4422048ece6d41f3e40248c2169c5c1168ba64ede2dfbd6c21d6e70bbe1ba8c82137834327eecea'
+            'e00aeb4850cdc7e00c43b0eec80f95381e0afc8f9319afb4558395c9c28cfe7469e3d449b073bebcd47bdda7dcbcfb95a03085a7e3ea008791b8e1579c1e257f'
+            '779049d55883fb7edf34ffd050e9d4d09252de529d776f507c1be19fd9688645d9100cf246fcd5b62ca1e1cf5408383ef02f09f3bc11203de33e5ad0ce17cda9'
+            '3252ba4ae19a5ff0fe0b5e999016391943614e3c6916305be8cc6ec26533d94bc33f9ea908a8fa3aa19b304979cba1ddb0d0d1daa5a8d18398ce237780c81767'
+            '67f3f7d24cdd3544fc9467efd9f8b944a012f0eb8547e4c82ed5a4d9c88e4fc2ea900c5095ff5201da242ddbbb6064c78f2ffb7378d8967c3b5a3f62c28dc636'
+            '13980b48196cc01d38e2c951f4b1320de6d74e8e3b2b1fcfa742e2e8ed7f944e064e709a205776745cdee267d606989a8e30e7f34001ef45c3a8d61a087caf3a'
+            'c040d3b13b9cb6dea00e88f2d5428c80c4045eeab9b9c1cf47eb1c3bf6b1f613a9f9181cd4133a18a8e15c651de70389d8ecf0ec873259e8a74068da5a24898e'
+            '6b84989e40876475c6831b8d394a10d98baa5e5437e7268b54d939443eb8f7844dc1e2f30a4e126cbba5dd5ec00a955dc5a7b1c7d42ca1047a7060353b300d06'
+            'bdb116224a39b340a91edf99d8a43ee83e3e661d2c863dd7ea5a4e902982e331ecfa593bee67eb562161c24b45ccbd1c89c8511665881aa6876870a09d9a4794'
+            '3e4ac206e0c3f90d497ed783063e27c008820dcafa6ac247f970cccc889cd80fe2713e9b72766da76b28afdac6ecb5be60729c7be842dd25d79befe179723af3'
+            '67940b746412f8fce9a88c59e65f13b83d2091d880b94746fb3bc576d9ef1a38a631de595b1867335f81c7539ee6c0a9a324edfc8bf1b41cc6610c8b8479e413')
+
+
+package() {
+  cd "$pkgdir"
+
+  # setup root filesystem
+  for d in boot dev etc home mnt usr var opt srv/http run; do
+    install -d -m755 $d
+  done
+  install -d -m555 proc
+  install -d -m555 sys
+  install -d -m0750 root
+  install -d -m1777 tmp
+  # vsftpd won't run with write perms on /srv/ftp
+  # ftp (uid 14/gid 11)
+  install -d -m555 -g 11 srv/ftp
+
+  # setup /etc and /usr/share/factory/etc
+  install -d etc/{ld.so.conf.d,skel,profile.d} usr/share/factory/etc
+  for f in fstab group host.conf hosts issue ld.so.conf motd nsswitch.conf \
+  passwd resolv.conf securetty shells profile; do
+    install -m644 "$srcdir"/$f etc/
+    install -m644 "$srcdir"/$f usr/share/factory/etc/
+  done
+  ln -s ../proc/self/mounts etc/mtab
+  for f in gshadow shadow crypttab; do
+    install -m600 "$srcdir"/$f etc/
+    install -m600 "$srcdir"/$f usr/share/factory/etc/
+  done
+  touch etc/arch-release
+  install -m644 "$srcdir"/locale.sh etc/profile.d/locale.sh
+  install -Dm644 "$srcdir"/os-release usr/lib/os-release
+
+  # setup /var
+  for d in cache local opt log/old lib/misc empty; do
+    install -d -m755 var/$d
+  done
+  install -d -m1777 var/{tmp,spool/mail}
+
+  # allow setgid games (gid 50) to write scores
+  install -d -m775 -g 50 var/games
+  ln -s spool/mail var/mail
+  ln -s ../run var/run
+  ln -s ../run/lock var/lock
+
+  # setup /usr hierarchy
+  for d in bin include lib share/{misc,pixmaps} src; do
+    install -d -m755 usr/$d
+  done
+  for d in {1..8}; do
+    install -d -m755 usr/share/man/man$d
+  done
+
+  # add lib symlinks
+  ln -s usr/lib lib
+  [[ $CARCH = 'x86_64' ]] && {
+    ln -s usr/lib lib64
+    ln -s lib usr/lib64
+  }
+
+  # add bin symlinks
+  ln -s usr/bin bin
+  ln -s usr/bin sbin
+  ln -s bin usr/sbin
+
+  # setup /usr/local hierarchy
+  for d in bin etc games include lib man sbin share src; do
+    install -d -m755 usr/local/$d
+  done
+  ln -s ../man usr/local/share/man
+
+  # setup systemd-sysctl
+  install -D -m644 "$srcdir"/sysctl usr/lib/sysctl.d/10-arch.conf
+
+  # setup systemd-sysusers
+  install -D -m644 "$srcdir"/sysusers usr/lib/sysusers.d/arch.conf
+
+  # setup systemd-tmpfiles
+  install -D -m644 "$srcdir"/tmpfiles usr/lib/tmpfiles.d/arch.conf
+
+  # setup systemd.environment-generator
+  install -D -m755 "$srcdir"/env-generator usr/lib/systemd/system-environment-generators/10-arch
+
+  # add logo
+  install -D -m644 "$srcdir"/axislinux.{svg,png} usr/share/pixmaps
+}
+
+# vim:set ts=2 sw=2 et:
