@@ -1,0 +1,371 @@
+##
+##
+## Polish Translation File
+##
+##
+## Written by XXCoreRangerX (07-Jun-2021)
+##
+##
+
+# Podstawowe
+_UseSpaceBar="Użyj klawisza [Spacja] by zaznaczyć/odznaczyć opcje."
+_AlreadyInst="Już zainstalowane:"
+_All="Wszystko"
+_Done="Gotowe"
+_PlsWaitBody="\nProszę czekać...\n\n"
+_PassReEntBody="\nWprowadź ponownie hasło.\n"
+_ErrTitle="Błąd"
+_PassErrBody="\nWpisane hasła nie są takie same. Proszę spróbować jeszcze raz.\n\n"
+
+# Zabezpieczenia i ustawienia
+_SecMenuTitle="Zabezpieczenia i ustawienia systemd"
+_SecJournTitle="Modyfikuj logowanie journald"
+_SecCoreTitle="Wyłącz logowanie zrzutów pamięci"
+_SecKernTitle="Zastrzeż Dostępu do Logów Kernela"
+_Edit="Edytuj plik konfiguracyjny"
+_Disable="Wyłącz"
+_SecMenuBody="\nIstnieje kilka użytecznych i przyjaznych dla początkujących ustawień do poprawy zabezpieczeń i wydajności systemu.\n\nWybranie opcji pokaże dodatkowe informacje na jej temat."
+_SecJournBody="\nsystemd-journald zbiera i przechowuje logi kernela, systemu, zapisy audytu, oraz standardowe wyniki i błedy serwisów.\n\nDomyślnie, trwały rozmiar journal to 10% rozmiaru partycji root: 500G partycja root oznacza limit 50G danych w /var/log/journal. 50M powinno wystarczyć. Logowanie może być też wyłączone, chociaż rozwiązywanie problemów z systemem może być trudniejsze.\n\n"
+_SecCoreBody="\nZrzut pamięci to zapis pamięci komputera, gdy jakaś aplikacja zcrashuje.\n\nUżyteczne dla deweloperów, ale nie zwykłych użytkowników, zrzuty pamięci marnują zasoby systemu i mogą zawierać wrażliwe dane, jak hasła czy kody szyfrowania.\n\nStandardowo, system generuje zrzuty pamięci dla wszystkich procesów w /var/lib/systemd/coredump. Można to nadpisać, tworząc plik konfiguracyjny w katalogu /etc/systemd/coredump.conf.d/.\n\n"
+
+# btrfs
+_btrfsSVTitle="btrfs Subvolumes"
+_btrfsSVBody="Create btrfs subvolumes?\n\nAn initial subvolume will be created and then mounted. Other subvolumes branching from this may then be created.\n\nOtherwise you can skip directly to the mounting options.\n"
+_btrfsMSubBody1="Enter the name of the initial subvolume to mount (np. ROOT). Mounting options may then be selected. Once mounted, all other subvolumes created for "
+_btrfsMSubBody2="will branch from it."
+_btrfsSVErrBody="Puste znaki i spacje są niedozwolone Proszę spróbować ponownie.\n"
+_btrfsSVBody1="Enter the name of subvolume"
+_btrfsSVBody2="to create within"
+_btrfsSVBody3="\n\nThis process will be repeated until an asterisk (*) is entered as the subvolume name.\n\nCreated Subvols:"
+_btrfsMntBody="Użyj klawisza [Spacja] to zaznaczyć/odznaczyć the desired mount options and review carefully. Please do not select multiple versions of the same option."
+_btrfsMntConfBody="Potwierdź następujące opcje montowania:\n\n"
+
+# Autopartycjonowanie
+_AutoPartBody1="Uwaga: WSZYSTKIE dane na"
+_AutoPartBody2="zostaną zniszczone.\n\nStworzona zostanie 512MB partycja boot, a następnie partycja (root albo '/') korzystająca z pozostałego wolnego miejsca."
+_AutoPartBody3="Jeżeli chcesz korzystać ze swapu, wybierz opcję 'Plik Swap' podczas montowania.\n\nCzy chcesz kontynuować?"
+
+# Błędy. Wszystkie pozostałe są generowane przez BASH.
+_ErrNoMount="\nPartycje muszą być najpierw zamontowane.\n\n"
+_ErrNoBase="\nNajpierw trzeba zainstalować podstawowy system Axis.\n\n"
+_ErrNoKernel="\nCo najmniej jeden kernel (linux lub linux-lts) musi być wybrany.\n\n"
+
+# Instalacja w Vbox
+_VBoxInstTitle="Instalacja w VirtualBox "
+_VBoxInstBody="\nJeżeli z jakiegoś powodu moduły gościa VirtualBox nie załadują się dla zainstalowanego systemu (np. jest niska rozdzielczość i paski przewijania po uruchomieniu), naprawi to następująca komenda:\n\n$ su\n# depmod -a\n# modprobe -a vboxvideo vboxguest vboxsf\n# reboot"
+
+# Wybierz pliki konfiguracyjne
+_SeeConfOptTitle="Przejrzyj Pliki Konfiguracyjne"
+_SeeConfOptBody="\nWybierz wyświetlone poniżej pliki to be reviewed or amended.\n"
+_SeeConfErrBody="\nPlik nie istnieje.\n\n"
+
+# Pacman
+_PrepPacKey="Odśwież Klucze Pacman'a"
+
+# LUKS / DM-Crypt / Szyfrowanie
+_PrepLUKS="Szyfrowanie LUKS (opcjonalne)"
+_LuksMenuBody="\nDevices and volumes encrypted using dm_crypt cannot be accessed or even seen without being unlocked via a key or password."
+_LuksMenuBody2="\n\nA seperate boot partition without encryption or logical volume management (LVM - unless using BIOS Grub) is required."
+_LuksMenuBody3="\n\nThe Automatic option uses default encryption settings, and is recommended for beginners. Otherwise, it is possible to specify cypher and key size parameters manually."
+_LuksOpen="Otwórz Zaszyfrowaną Partycję"
+_LuksOpenBody="\nSpecify a name for the encrypted block device. It is not necessary to prefix it with /dev/mapper/. An example has been provided."
+_LuksEncrypt="Automatyczna Enkrypcja LUKS"
+_LuksEncryptAdv="Define Key-Size and Cypher"
+_LuksEncryptBody="\nWybierz partycję do szyfrowania."
+_LuksEncruptSucc="\nGotowe! Opened and ready for LVM (recommended) or direct mounting.\n"
+_LuksPartErrBody="\nA minimum of two partitions are required for encryption:\n\n1. Root (/) - standard or lvm partition types.\n\n2. Boot (/boot or /boot/efi) - standard partition types only (except lvm where using BIOS Grub).\n"
+_SelLuksRootBody="\nWybierz partycję ROOT (/) do szyfrowania. Tutaj zostanie zainstalowany Axis.\n\n"
+_LuksPassBody="\nWpisz hasło do szyfrowania/odszyfrowywania partycji. Nie powinno być takie samo jak hasło Root lub innych użytkowników systemu.\n"
+_LuksWaitBody="\nStowrzenie zaszyfrowanej partycji Root:"
+_LuksWaitBody2="Używane urządzenie lub partycja:"
+_LuksCipherKey="\nOnce the specified flags have been amended, they will automatically be used with the 'cryptsetup -q luksFormat /dev/...' command.\n\nNOTE: Key files are not supported; they can be added manually post-installation. Do not specify any additional flags such as -v (--verbose) or -y (--verify-passphrase).\n"
+
+# Zarządzanie Woluminami Logicznymi
+_PrepLVM="Zarządzanie Woluminami Logicznymi"
+_PrepLVM2="(opcjonalne)"
+_LvmMenu="\nLogical Volume Management (LVM) allows 'virtual' hard drives (Volume Groups) and partitions (Logical Volumes) to be created from existing drives and partitions. A Volume Group must be created first, then one or more Logical Volumes in it.\n\nLVM can also be used with an encrypted partition to create multiple logical volumes (e.g. root and home) in it."
+_LvmCreateVG="Create VG and LV(s)"
+_LvmDelVG="Delete Volume Groups"
+_LvMDelAll="Delete *ALL* VGs, LVs, PVs"
+_LvmDetBody="\nExisting Logical Volume Management (LVM) detected. Activating. Please Wait...\n\n"
+_LvmPartErrBody="\nThere are no viable partitions available to use for Logical Volume Management. A minimum of one is required.\n\nIf LVM is already in use, deactivating it will allow the partition(s) used for its Physical Volume(s) to be used again.\n\n"
+_LvmNameVgBody="\nEnter the name of the Volume Group (VG) to create.\n\nThe VG is the new 'virtual device / hard-disk' to create out of the partition(s) selected next.\n"
+_LvmNameVgErr="\nInvalid Name Entered. The Volume Group name may be alpha-numeric, but may not contain spaces, start with a '/', or already be in use.\n\n"
+_LvmPvSelBody="\nSelect the partition(s) to use for the Physical Volume (PV).\n\n"
+_LvmPvConfBody1="\nConfirm creation of Volume Group "
+_LvmPvConfBody2="with the following partitions:\n\n"
+_LvmPvActBody1="\nCreating and activating Volume Group "
+_LvmPvDoneBody1="\nVolume Group "
+_LvmPvDoneBody2="has been created"
+_LvmLvNumBody1="\nUse [Spacebar] to select the number of Logical Volumes (LVs) to create in"
+_LvmLvNumBody2="\n\nThe last (or only) LV will automatically use 100% of the remaining space in the Volume Group."
+_LvmLvNameBody1="\nEnter the name of the Logical Volume (LV) to create.\n\nThis is like setting a name / label for a partition.\n"
+_LvmLvNameBody2="\nNOTE: This LV will automatically use up all space remaining on the Volume Group"
+_LvmLvNameErrBody="\nInvalid Name Entered. The Logical Volume (LV) name may be alpha-numeric, but may not contain spaces or be preceeded with a '/'.\n\n"
+_LvmLvSizeBody1="remaining"
+_LvmLvSizeBody2="\n\nEnter the size of the Logical Volume (LV) in Megabytes (M) or Gigabytes (G). For example, 100M will create a 100 Megabyte LV. 10G will create a 10 Gigabyte LV.\n"
+_LvmLvSizeErrBody="\nInvalid value Entered. A numeric value must be entered with an 'M' (Megabytes) or a 'G' (Gigabytes) at the end.\n\nExamples include, 100M, 10G, or 250M. The value may also not be equal to or greater than the remaining size of the VG.\n\n"
+_LvmCompBody="\nDone! All Logical Volumes have been created for the Volume Group.\n\nDo you wish to view the new LVM scheme?\n\n"
+_LvmDelQ="\nConfirm deletion of Volume Group(s) and Logical Volume(s).\n\nIf deleting a Volume Group, all Logical Volumes within will be deleted as well.\n\n"
+_LvmSelVGBody="\nSelect Volume Group to delete. All Logical Volumes within will also be deleted.\n"
+_LvmVGErr="\nNo Volume Groups found.\n\n"
+
+# Pokaż urządzenia i partycje
+_DevShowOpt="Pokaż Urządzenia (opcjonalne)"
+
+# Sprawdź Wymagania
+_ChkTitle="Sprawdzanie Wymagań"
+_ChkBody="\nSprawdzanie czy instalator uruchomiono jako superużytkownik i czy aktywne jest połączenie z internetem. Proszę czekać...\n\n"
+_RtFailBody="\nInstalator musi być uruchomiony jako root. Opuszczanie.\n\n"
+_ConFailBody="\nTest połączenie z internetem zakończony niepowodzeniem. Opuszczanie.\n\n"
+_ReqMetTitle="Wymagania się zgadzają"
+_ReqMetBody="\nWszystkie testy ukończone poprawnie!\n\n"
+
+# Mirrorlista Instalatora
+_MirrorlistTitle="Mirrorlista"
+_MirrorlistBody="\nMirrorlista zawiera adresy używane przez Pacmana do instalacji pakietów. By znaleźć najszybsze serwery, NAJPIERW wygeneruj mirrorlistę PRZED uruchamianiem RankMirrors, inaczej ten proces zajmie DUŻO CZASU.\n\nPlik konfiguracyjny Pacmana może być edytowany by odkomentować repozytorium multilib i inne.\n\nNOTE: Zamykaj pliki tekstowe za pomocą '[CTRL] + [x]'. Jeżeli dokonano w plikach zmian, wciśnij [T] by zapisać lub [N] by nie zapisywać zmian.\n"
+_MirrorbyCountry="Generuj mirrorlistę na podstawie Kraju"
+_MirrorEdit="Manualnie edytuj mirrorlistę"
+_MirrorRankTitle="Uruchom RankMirrors"
+_MirrorRestTitle="Przywróć oryginalną mirrorlistę"
+_MirrorRankBody="\nSzukanie najszybszych serwerów z mirrorlisty."
+_MirrorNoneBody="\nKopia oryginalnej mirrorlisty nie została znaleziona.\n\n"
+_MirrorCntryBody="\nZostanie wygenerowana lista źródeł dla wybranego kraju.\n"
+_MirrorGenQ="Użyć wygenerowanej mirrorlisty dla instalatora?"
+_MirrorPacman="Edytuj konfigurację Pacmana"
+_MIrrorPacQ="\nCzy korzystać z edytowanej konfiguracji Pacmana dla zainstalowanego systemu? Jeżeli Tak, plik zostanie skopiowane bo instalacji podstawowych pakietów.\n\n"
+
+# Ustaw Mapę Klawiszy (vconsole)
+_VCKeymapTitle="Ustaw Mapę Klawiszy"
+_VCKeymapBody="\nMapa Klawiszy vconsole służy dla nie-graficznego środowiska. Jest oddzielna od mapy klawiszy środowiska graficznego / terminala."
+
+# Ustaw Układ Klawiatury (środowisko)
+_XkbmapBody="\nWybierz Układ Klawiatury dla Środowiska Graficznego."
+
+# Ustaw Lokale
+_localeBody="Lokale określają wyświetlane języki, czas i datę, etc.\n\nFormat to język_KRAJ (np. pl_PL to polski, Polska; en_US oznacza angielski, Stany Zjednoczone; en_GB znaczy angielski, Wielka Brytania)."
+
+# Ustaw Strefę Czasową
+_TimeZBody="\nStrefa czasowa jest używana by poprawnie ustawić czas urządzenia."
+_TimeSubZBody="\nWybierz miasto najbliższe dla ciebie."
+_TimeZQ="\nUstaw Strefę czasową jako"
+
+# Ustaw Zegar Sprzętowy
+_HwCBody="\nUTC to uniwersalny standard czasu, i jest rekomendowany, chyba że dual-bootujemy z Windowsem."
+
+# Wygeneruj FSTAB
+_FstabBody="\nPlik FSTAB (File System TABle) określa które magazyny danych i partycje zamontować, i do czego służą.\n\nUUID (Universally Unique IDentifier) jest rekomendowane.\n\nJeżeli wcześniej nie podano etykiety partycji, nazwa urządzenie będzie używana jako etykieta."
+_FstabErr="\nOpcja UUID partycji służy tylko dla instalacji UEFI/GPT.\n\n"
+_FstabDevName="Nazwa Urządzenia"
+_FstabDevLabel="Etykieta Urządzenia"
+_FstabDevUUID="UUID Urządzenia"
+_FstabDevPtUUID="UUID Partycji UEFI"
+
+# Ustaw Nazwę Hosta
+_HostNameBody="\nNazwa hosta używana służy do zidentyfikowania komputera w sieci.\n\nJest ograniczona do znaków alfanumerycznych, może zawierać myślnik (-) - ale nie na początku lub końcu - i nie może mieć więcej niż 63 znaki.\n"
+
+# Ustaw Hasło Root'a
+_PassRtBody="\nWprowadź hasło Root'a\n\n"
+_PassRtBody2="\nPonownie wprowadź hasło Root'a\n\n"
+
+# Utwórz Nowego Użytkownika
+_NUsrTitle="Utwórz Nowego Użytkownika"
+_NUsrBody="\nWpisz nazwę użytkownika. Koniecznie pisać MAŁYMI literami.\n"
+
+# Błąd Nazwy Użytkownika
+_NUsrErrTitle="Błąd Nazwy Użytkownika"
+_NUsrErrBody="\nWpisano niepoprawną nazwę użytkownika. Proszę spróbować ponownie.\n\n"
+
+# Ustaw Użytkownika
+_PassNUsrBody="\nWpisz hasło dla"
+_NUsrSetBody="\nTworzenie Użytkownika i ustawianie grup...\n\n"
+
+# Montowanie (Partycji)
+_MntStatusTitle="Status Montowania"
+_MntStatusSucc="\nMontowanie zakończone sukcesem!\n\n"
+_MntStatusFail="\nMontowanie zakończone niepowodzeniem!\n\n"
+_WarnMount1="\nWAŻNE: Partycje można wybierać bez formatowania ich za pomocą"
+_WarnMount2="opcji na górze menu systemów plików.\n\nUpewnij się, że dokonano poprawnych wyborów do montowania i formatowania, i że nie ma żadnych ostrzeżeń, z wyjątkiem partycji UEFI boot.\n\n"
+
+# Wybierz Urządzenie (instalacja)
+_DevSelTitle="Wybierz Urządzenie"
+_DevSelBody="\nUrządzenia (/dev/) to dostępne dyski twarde i USB na których można zainstalować system. Pierwszy to /sda, drugi /sdb, i tak dalej.\n\nJeżeli korzystasz z pendrive'a do uruchomienia tego instalatora, bądź ostrożny, ponieważ ten też może się tu wyświetlać!"
+
+# Narzędzie Partycjonowania
+_PartToolTitle="Narzędzie Partycjonowania"
+_PartToolBody="\nDla początkujących dostępna jest opcja automatycznego partycjonowania. Inaczej, cfdisk zalecany jest do systemów BIOS, a parted dla UEFI.\n\nNIE wybieraj narzędzia wspierającego tylko UEFI/GPT dla systemu BIOS/MBR ponieważ może to spowodować poważne szkody, wliczając niepoprawną instalację."
+_PartOptAuto="Automatyczne Partycjonowanie"
+_PartOptWipe="Bezpiecznie Wymaż Urządzenie (opcjonalne)"
+_AutoPartWipeBody1="\nUWAGA: WSZYSTKIE dane na"
+_AutoPartWipeBody2="zostaną zniszczone za pomocą komendy 'wipe -Ifre'. Ten proces może zająć dużo czasu, w zależności od rozmiaru urządzenia.\n\nCzy chcesz kontynuować?\n"
+
+# Błąd Partycjonowania
+_PartErrBody="\nSystemy BIOS wymagają co najmniej jednej partycji (ROOT).\n\nZ kolei systemy UEFI potrzebują dwóch partycji (ROOT i UEFI).\n\n"
+
+# System Plików
+_FSTitle="Wybierz System Plików"
+_FSBody="\nZalecany jest system Ext4. Nie wszystkie systemy plików mogą mieć partycje Root lub Boot. Wszystie mają inne funkcje i limity."
+_FSSkip="Pomiń / Żaden"
+
+# Wybierz Root
+_SelRootBody="\nWybierz partycję ROOT. Tutaj zostanie zainstalowany Axis."
+
+# Wybierz SWAP
+_SelSwpBody="\nWybierz partycję SWAP. Jeżeli korzystasz z pliku SWAP, zostanie ustawiony o takim samym rozmiarze jak pamięć RAM urządzenia."
+_SelSwpNone="Żadna"
+_SelSwpFile="Plik SWAP"
+
+# Wybierz UEFI
+_SelUefiBody="\nWybierz partycję UEFI. To specjalna partycja do uruchamiania systemów UEFI."
+
+# Formatuj UEFI
+_FormUefiBody="Partycja UEFI"
+_FormUefiBody2="została już sformatowana.\n\nSformatować ponownie? Wymaże to WSZYSTKIE dane na tej partycji.\n\n"
+
+# Punkt Montowania UEFI
+_MntUefiBody="\nWybierz Punkt Montowania UEFI.\n\nsystemd-boot potrzebuje /boot. Grub zadziała z dowolnym punktem montowania."
+
+# Dodatkowe Partycje
+_ExtPartBody="\nWybierz dodatkowe partycje w dowolnej kolejności, albo wybierz 'Gotowe' by zakończyć."
+
+# Dodatkowe Partycje
+_ExtPartBody1="\nWybierz punkt montowania partycji. Upewnij się, że nazwa zaczyna się ukośnikiem (/). Przykładowo:\n\n"
+
+# Błąd Nazewnictwa Dodatkowych Partycji
+_ExtErrBody="\nPartycja nie może być zamontowana z powodu problemu z nazwą punktu montowania. Nazwa musi zaczynać się ukośnikiem.\n\n"
+
+# Zainstaluj Podstawowy System
+_InstBseTitle="Zainstaluj Podstawowy System"
+_InstBseBody="\nStandard: Zalecany dla początkujących. Wybierz do dwóch kerneli (linux i linux-lts) i opcjonalnie grupę pakietów base-devel. sudo, btrfs-progs, f2fs-tools również zostaną zainstalowane.\n\nZaawansowane: Wybierz do czterech kerneli (linux, lts, grsec, zen) i kontroluj indywidualnie grupy pakietów base i base-devel. Dla grsec i zen w Virtualbox lub z kartą graficzną NVIDIA może być wymagana dodatkowa konfiguracja.\n\nUWAGA: Co najmniej jeden kernel musi być wybrany."
+_InstStandBseBody="\nGrupa pakietów base zostanie automatycznie zainstalowana. Grupa base-devel jest potrzebna by korzystać z Arch User Repository (AUR) - zalecane.\n\n"
+_InstStandBase="Standardowa Instalacja"
+_InstAdvBase="Zaawansowana Instalacja"
+_InstAdvBseBody="\nUWAGA: Ta opcja jest tylko dla zaawansowanych użytkowników. Nowi użytkownicy powinni korzystać z opcji 'standard'."
+_InstAdvWait="\nZbieranie informacji o pakietach."
+
+# Zainstaluj Bootloader BIOS
+_InstBiosBtTitle="Zainstaluj Bootloader BIOS"
+_InstBiosBtBody="\nGrub2 jest zalecany dla początkujących.\n\nSyslinux to lżejsza i prostsza alternatywa, która działa tylko z systemem plików ext/btrfs (NIE INSTALOWAĆ, JEŻELI KORZYSTA SIĘ Z SYSTEMU WINDOWS LUB MAC OS)."
+_InstSysTitle="Zainstaluj Syslinux"
+_InstSysBody="\nZainstalować syslinux do Master Boot Record (MBR) czy do Root (/)?\n\n"
+
+# Zainstaluj Bootloader UEFI
+_InstUefiBtTitle="Zainstaluj Bootloader UEFI"
+_InstUefiBtBody="\nsystemd-boot wymaga /boot. Grub zadziała z dowolnym punktem montowania."
+_SetBootDefBody="\nNiektóre systemy UEFI mogą nie wykryć bootloadera, chyba że jest ustawiony jako podstawowy po skopiowaniu pliku efi"
+_SetBootDefBody2="i zmianie nazwy na bootx64.efi.\n\nJest to zalecane, chyba że korzystamy ze standardowego bootloadera, albo wielu bootloadera.\n\nUstawić bootloader jako podstawowy?\n\n"
+
+# plik efi dla GRUB
+_SetDefDoneBody="został ustawiony jako podstawowy bootloader.\n\n"
+
+# Menu Kart Graficznych
+_GCtitle="Menu Kart Graficznych"
+_GCBody="Wbierz Nouveau dla starszych kart NVIDIA. Jeżeli twoja karta graficzna nie jest na liście, wybierz 'Nieznana / Ogólna'.\n"
+_GCUnknOpt="Nieznana / Ogólna"
+
+# Sprawdzanie Konfiguracji NVIDIA
+_NvidiaConfTitle="Sprawdzanie Konfiguracji NVIDIA"
+_NvidiaConfBody="\nPodstawowy plik konfiguracyjny NVIDIA został utowrzony. Proszę go sprawdzić przed kontynuowaniem.\n"
+
+# Wykrywanie Karty Graficznej
+_GCDetTitle="Wykryta"
+_GCDetBody="\nCzy masz kartę graficzną, czy korzystasz z oprogramowania do wirtualizacji"
+_GCDetBody2="-Wybierz 'Tak' by zainstalować sterownik OPEN-SOURCE.\n\n-Wybierz 'Nie' by otworzyć menu, które zawiera specjalne sterowniki NVIDIA (zalecane dla wszystkich kart NVIDIA)."
+
+# Informacje o instalacji środowiska graficznego
+_DEInfoBody="\nWiele środowisk może zostać zainstalowanych.\n\nGnome i LXDE mają od razu menedżer wyświetlania/logowania.\n\nCinnamon, Gnome i KDE mają menedżer połączeń sieciowych.\n\n"
+
+# Menu Instalacji Środowiska Graficznego
+_InstDETitle="Instalacja Środowiska Graficznego"
+_InstDEBody="Środowiska graficzne i ich grupy pakietów są pierwsze na liście."
+
+# Zainstaluj Powszechne Pakiety
+_InstComTitle="Zainstaluj Powszechne Pakiety"
+_InstComBody="Niektóre środowiska graficzne potrzebują dodatkowych pakietów by poprawnie funkcjonować."
+
+# Menedżer Wyświetlania
+_DmChTitle="Zainstaluj Menedżer Wyświetlania"
+_DmChBody="gdm lists Gnome-shell as a dependency. sddm is recommended for plasma. lightdm will incude lightdm-gtk-greeter. slim is no longer maintained."
+_DmDoneBody="\nDisplay manager has been installed and enabled.\n\n"
+
+# Menedżer Połączeń Sieciowych
+_InstNMTitle="Zainstaluj Menedżer Połączeń Sieciowych"
+_InstNMBody="\nNetwork Manager is recommended, especially for wireless and PPPoE/DSL connections.\n"
+_InstNMErrBody="\nNetwork connection manager has been installed and enabled.\n\n"
+
+# Powitanie
+_WelTitle="Witaj w"
+_WelBody="\nTen instalator pobierze najnowsze pakiety z repozytoriów Arch i Axis. Podjęta jest tylko minimalna i konieczna konfiguracja.\n\nOPCJE MENU: Wybieraj, klikając numer opcji lub klawisze strzałek przed wciskaniem [enter] by potwierdzić. Przełączaj między przyciskami za pomocą klawisza [Tab] lub strzałek lewo/prawo przed wciskaniem [enter] by potwierdzić. Przez dłuższe listy nawigować można za pomocą klawiszy [pg up] i [pg down], i/lub klikając pierwszą literę danej opcji.\n\nKONFIGURACJA & OPCJE PAKIETÓW: Standarowe pakiety będą od razu zaznaczone. Użyj [Spacji] by zaznaczyć/odznaczyć."
+
+# Menu Przygotowywania
+_PrepMenuTitle="Przygotuj instalację"
+_PrepMenuBody="\nUkład klawiatury konsoli będzie używany zarówno przez instalator jak i przez zainstalowany system.\n"
+_PrepKBLayout="Ustaw Układ Klawiatury Pulpitu"
+_PrepMirror="Konfiguruj Mirrorlistę Instalatora"
+_PrepPartDisk="Partycjonuj Dyski"
+_PrepMntPart="Zamontuj Partycje"
+_Back="Wstecz"
+
+# Menu Podstawowej Instalacji
+_InstBsMenuTitle="Zainstaluj Podstawowe"
+_InstBseMenuBody="\nPakity, by zostać zainstalowane, muszą być pobrane z serwerów źrodłowych. Skrypt pacstrap instaluje podstawowy system. By budować i instalować pakiety z AUR, trzeba zainstalować też grupę base-devel."
+_InstBse="Zainstaluj Podstawowe Pakiety"
+_InstBootldr="Zainstaluj Menedżer Uruchamiania"
+
+# Menu Konfiguracji Podstawowej
+_ConfBseMenuTitle="Skonfiguruj Podstawowy System"
+_ConfBseBody="\nKonfiguracja podstawowego systemu."
+_ConfBseFstab="Generuj FSTAB"
+_ConfBseHost="Ustaw Nazwę Hosta"
+_ConfBseTimeHC="Ustaw Strefę Czasową i Zegar"
+_ConfBseSysLoc="Ustaw Język Systemu"
+_MMRunMkinit="Uruchom Mkinitcpio"
+
+# Menu Użytkownika
+_ConfUsrRoot="Ustaw Hasło Root'a"
+_ConfUsrNew="Dodaj Nowych Użytkowników"
+
+# Graphics Menu
+_InstGrMenuTitle="Zainstaluj Interfejs Graficzny"
+_InstGrMenuBody="\nPrzed instalacją środowiska graficznego, sterowniki grafiki, kart graficznych, urządzeń wejściowych, i kart dźwiękowych MUSZĄ być zainstalowane pierwsze."
+_InstGrMenuDS="Zainstaluj Serwer Wyświetlania"
+_InstGrMenuDSBody="Oprócz opcji Xorg i wayland, dostępne na liście są także sterowniki urządzeń wejściowych (xf86-input-)."
+_InstGrMenuDD="Zainstaluj Sterownik Wyświetlania"
+_InstGrMenuGE="Zainstaluj Środowisko Graficzne"
+_InstGrMenuDM="Zainstaluj Menedżer Wyświetlania"
+
+# Menu Połączeń Sieciowych
+_InstNMMenuTitle="Zainstaluj Możliwości Sieciowe"
+_InstNMMenuBody="\nDodatkowe pakiety mogą być konieczne dla urządzeń sieciowych i bezprzewodowych. Niektóre urządzenia bezprzewodowe potrzebują specjalnych sterowników, by działać.\n\n"
+_InstNMMenuPkg="Zainstaluj pakiety Urządzeń Bezprzewodowych"
+_InstNMMenuNM="Zainstaluj Menedżer Połączeń Sieciowych"
+_InstNMMenuCups="Zainstaluj CUPS / Pakiety Drukarek"
+_InstNMMenuPkgBody="Podstawowe pakiety Wi-Fi zostaną zaznaczone, jeśli wykryto urządzenie Wi-Fi. Jeśli nie jesteś pewnien konieczności dodatkowych pakietów, możesz zainstalować wszystkie."
+_SeeWirelessDev="Wyświetl Urządzenie Bezprzewodowe (opcjonalne)"
+_WirelessShowTitle="Urządzenie Bezprzewodowe"
+_WirelessErrBody="\nŻadne urządzenie nie zostało wykrytę.\n"
+_InstCupsBody="CUPS (Common Unix Printing System) to standardowy system drukowania, o otwartym źródle, stworzony przez Apple Inc. dla systemu OS X i innych UNIX-owych systemów operacyjnych. Samba pozwala na współdzielenie plików i drukarek na systemach Windows i Linux."
+_InstCupsQ="\nWłączyć serwis org.cups.cupsd.service na zainstalowanym systemie?\n\n"
+
+# Menu Instalacji Wsparcia dla Multimediów
+_InstMultMenuTitle="Zainstaluj Wsparcie dla Multimediów"
+_InstMultMenuBody="\nPakiety ułatwień dostępu pomagają osobom z wadami wzroku i/lub słuchu. Opcja dodatkowych pakietów pozwala zainstalować dodatkowe pożądane pakiety.\n"
+_InstMulSnd="Zainstaluj Sterownik(i) Dźwięku"
+_InstMulSndBody="\nALSA zapewnia sterownik karty dźwiękowej kernela. PulseAudio służy jako pełnomocnik ALSA."
+_InstMulCodec="Zainstaluj Kodeki"
+_InstMulAcc="Zainstaluj Pakiety Dostępności"
+_InstMulAccBody="\nWybierz żądane pakiety dostępności.\n\n"
+_InstMulCust="Zainstaluj Dodatkowe Pakiety"
+
+# Menu Kodeków
+_InstMulCodBody="GStreamer is a pipeline-based multimedia framework. The first two options are the current and legacy (gstreamer0.10) package groups. Xine jest również na liście.\n\n"
+
+# Dodatkowe Pakiety
+_InstMulCustBody="\nWpisz nazwy pakietów do zainstalowania z repositoriów Arch'a, oddzielone spacjami. Nie należy wpisywać komendy pacstrap (ani żadnej innej). Należy wpisać poprawne nazwy pakietów.\n\nPrzykładowo, by zainstalować Firefox, VLC, i HTop: firefox vlc htop\n"
+
+# Menu Głowne
+_MMTitle="Menu Głowne"
+_MMBody="\nKażdy krok musi być wykonany W ODPOWIEDNIEJ KOLEJNOŚCI. Kiedy skończysz, wybierz 'Gotowe' by ukończyć instalację.\n"
+
+# Zamknij Instalator
+_CloseInstBody="Zamknąć instalator?"

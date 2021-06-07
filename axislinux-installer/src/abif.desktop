@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=Axis Linux Installer
+Comment=Axis Linux installer
+Exec=sudo axislinux-installer
+Icon=axislinux
+Type=Application
+Categories=System;Settings;

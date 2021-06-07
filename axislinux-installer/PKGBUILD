@@ -1,0 +1,24 @@
+# Maintainer: XXCoreRangerX <mail@xxcore.pl>
+
+pkgname=axislinux-installer
+pkgver=2
+pkgrel=3
+pkgdesc="Command line installer for Axis Linux."
+arch=('any')
+url='https://xxcore.pl'
+license=('GPL')
+PACKAGER="XXCoreRangerX <mail@xxcore.pl>"
+provides=($pkgname)
+conflicts=($pkgname)
+
+package() {
+	# copy whole dir recursively to destination
+	(find abif-master -type f -exec install -Dm 644 "{}" "$pkgdir/{}" \;)
+	# copy the script
+	install -Dm 644 axislinux-installer -t ${pkgdir}/usr/local/bin/
+	# make files executable
+	chmod 755 "$pkgdir"/usr/local/bin/axislinux-installer
+	chmod 755 "$pkgdir"/abif-master/abif
+	# copy desktop icon
+	install -Dm 644 abif.desktop -t ${pkgdir}/usr/share/applications/
+}
