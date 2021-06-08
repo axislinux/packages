@@ -25,7 +25,7 @@ _SecKernTitle="Zastrzeż Dostępu do Logów Kernela"
 _Edit="Edytuj plik konfiguracyjny"
 _Disable="Wyłącz"
 _SecMenuBody="\nIstnieje kilka użytecznych i przyjaznych dla początkujących ustawień do poprawy zabezpieczeń i wydajności systemu.\n\nWybranie opcji pokaże dodatkowe informacje na jej temat."
-_SecJournBody="\nsystemd-journald zbiera i przechowuje logi kernela, systemu, zapisy audytu, oraz standardowe wyniki i błedy serwisów.\n\nDomyślnie, trwały rozmiar journal to 10% rozmiaru partycji root: 500G partycja root oznacza limit 50G danych w /var/log/journal. 50M powinno wystarczyć. Logowanie może być też wyłączone, chociaż rozwiązywanie problemów z systemem może być trudniejsze.\n\n"
+_SecJournBody="\nsystemd-journald zbiera i przechowuje logi kernela, systemu, zapisy audytu, oraz wyniki i błedy serwisów.\n\nDomyślnie, trwały rozmiar journal to 10% rozmiaru partycji root: 500G partycja root oznacza limit 50G danych w /var/log/journal. 50M powinno wystarczyć. Logowanie może być też wyłączone, chociaż rozwiązywanie problemów z systemem może być wtedy trudniejsze.\n\n"
 _SecCoreBody="\nZrzut pamięci to zapis pamięci komputera, gdy jakaś aplikacja zcrashuje.\n\nUżyteczne dla deweloperów, ale nie zwykłych użytkowników, zrzuty pamięci marnują zasoby systemu i mogą zawierać wrażliwe dane, jak hasła czy kody szyfrowania.\n\nStandardowo, system generuje zrzuty pamięci dla wszystkich procesów w /var/lib/systemd/coredump. Można to nadpisać, tworząc plik konfiguracyjny w katalogu /etc/systemd/coredump.conf.d/.\n\n"
 
 # btrfs

@@ -2,7 +2,7 @@
 
 pkgname=axislinux-installer
 pkgver=2
-pkgrel=3
+pkgrel=4
 pkgdesc="Command line installer for Axis Linux."
 arch=('any')
 url='https://xxcore.pl'

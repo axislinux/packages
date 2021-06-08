@@ -116,7 +116,7 @@ select_language() {
 	"7" $"Italiano           (it_IT)" \
 	"8" $"Nederlands         (nl_NL)" \
 	"9" $"Magyar             (hu_HU)" \
-	"10" $"Polish             (pl_PL)" 2>${ANSWER}
+	"10" $"Polski             (pl_PL)" 2>${ANSWER}
 	case $(cat ${ANSWER}) in
         "1") source /abif-master/english.trans
              CURR_LOCALE="en_US.UTF-8"

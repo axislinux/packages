@@ -1,0 +1,6 @@
+# Ignore any scripts
+*.sh
+
+# Ignore prebuilt packages and their signatures
+*.pkg.tar.zst
+*.pkg.tar.zst.sig
