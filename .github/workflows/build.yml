@@ -1,0 +1,61 @@
+name: Build Axis Linux packages
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container:
+      image: archlinux
+      options: --privileged
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Check the environments CPU
+        run: |
+          lscpu | grep "Model name"
+      
+      - name: Install packages via pacman
+        run: |
+          pacman -Syu git binutils fakeroot grep base-devel sudo wget --noconfirm --needed
+          
+      - name: Install Axis Linux on top of Arch Linux
+        run: |
+          wget -O axislinux-key https://raw.githubusercontent.com/axislinux/releases-nightly/master/axislinux-key
+          pacman-key --init
+          pacman-key -a axislinux-key
+          pacman-key --lsign-key FD11A3293A6830E6D28E1408A182D760A59FDFDD
+          rm /etc/pacman.conf
+          wget -O /etc/pacman.conf https://raw.githubusercontent.com/axislinux/axis-live/master/axislive/pacman.conf
+          pacman -Syu --noconfirm
+          pacman-key --populate axislinux
+          
+      - name: Create builder user account
+        run: |
+          chmod -R 777 .
+          useradd builder -m
+          echo "builder ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
+          
+      - name: Build axislinux-keyring
+        run: |
+          cd axislinux-keyring
+          sudo -H -u builder makepkg --syncdeps --noconfirm --check
+          
+      - name: Build filesystem
+        run: |
+          cd filesystem
+          sudo -H -u builder makepkg --syncdeps --noconfirm --check
+          
+      - name: Build base
+        run: |
+          cd base
+          sudo -H -u builder makepkg --syncdeps --noconfirm --check
+          
+      - name: Check if the packages were created
+        run: |
+          find | grep zst
