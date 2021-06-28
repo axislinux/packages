@@ -1,6 +1,7 @@
 NAME="Axis Linux"
 PRETTY_NAME="Axis Linux"
 ID=axis
+ID_LIKE=arch
 BUILD_ID=rolling
 ANSI_COLOR="0;31"
 HOME_URL="https://xxcore.pl/"
